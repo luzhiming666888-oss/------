@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (全项目编译)",
+      "type": "cppbuild",
+      "command": "gcc",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-std=c99",
+        "-g",
+        "${workspaceFolder}/src/*.c",
+        "-I", "${workspaceFolder}/include",
+        "-o", "${workspaceFolder}/campus_course.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "gcc -Wall -Wextra -std=c99 src/*.c -I include -o campus_course.exe"
+    },
+    {
+      "label": "Clean",
+      "type": "shell",
+      "command": "rm",
+      "args": ["-f", "${workspaceFolder}/campus_course.exe"],
+      "problemMatcher": []
+    }
+  ]
+}
